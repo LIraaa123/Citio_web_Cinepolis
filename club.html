@@ -25,6 +25,10 @@
         .btn-submit { width: 100%; background-color: #0066cc; color: white; border: none; padding: 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 15px; }
         .btn-submit:hover { background-color: #004999; }
 
+        /* Mensajes de confirmación */
+        .alert-message { display: none; margin-top: 15px; padding: 12px; border-radius: 4px; font-size: 14px; font-weight: bold; text-align: center; }
+        .alert-success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+
         footer { background-color: #0b2545; color: white; text-align: center; padding: 20px; margin-top: 50px; font-size: 14px; }
     </style>
 </head>
@@ -44,9 +48,10 @@
     <div class="container">
         <div class="forms-wrapper">
             
+            <!-- Iniciar Sesión con Tarjeta -->
             <div class="form-box">
                 <h2>Ingresa con tu Tarjeta Club</h2>
-                <form action="#" method="POST">
+                <form id="login-form" onsubmit="ingresarTarjeta(event)">
                     <div class="form-group">
                         <label for="card-number">Número de Tarjeta (16 dígitos)</label>
                         <input type="text" id="card-number" placeholder="Ej. 1010 2020 3030 4040" required maxlength="16">
@@ -56,12 +61,14 @@
                         <input type="password" id="password" placeholder="Tu contraseña" required>
                     </div>
                     <button type="submit" class="btn-submit">Ingresar a Club Cinépolis</button>
+                    <div id="login-alert" class="alert-message alert-success"></div>
                 </form>
             </div>
 
+            <!-- Registro -->
             <div class="form-box">
                 <h2>¿No tienes tarjeta? Regístrate</h2>
-                <form action="#" method="POST">
+                <form id="register-form" onsubmit="registrarCuenta(event)">
                     <div class="form-group">
                         <label for="fullname">Nombre Completo</label>
                         <input type="text" id="fullname" placeholder="Ej. Juan Pérez" required>
@@ -75,6 +82,7 @@
                         <input type="password" id="new-password" placeholder="Mínimo 6 caracteres" required>
                     </div>
                     <button type="submit" class="btn-submit" style="background-color: #27ae60;">Crear Cuenta Club</button>
+                    <div id="register-alert" class="alert-message alert-success"></div>
                 </form>
             </div>
 
@@ -84,6 +92,30 @@
     <footer>
         <p>&copy; 2026 Cinépolis - Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        function ingresarTarjeta(event) {
+            event.preventDefault(); // Evita recargar la página o enviar POST a GitHub Pages
+            const cardInput = document.getElementById('card-number').value;
+            const alertBox = document.getElementById('login-alert');
+            
+            alertBox.style.display = 'block';
+            alertBox.textContent = '¡Bienvenido! Sesión iniciada con éxito para la tarjeta N° ' + cardInput;
+            
+            document.getElementById('login-form').reset();
+        }
+
+        function registrarCuenta(event) {
+            event.preventDefault(); // Evita recargar la página o enviar POST a GitHub Pages
+            const nameInput = document.getElementById('fullname').value;
+            const alertBox = document.getElementById('register-alert');
+            
+            alertBox.style.display = 'block';
+            alertBox.textContent = '¡Registro exitoso, ' + nameInput + '! Tu tarjeta digital Club Cinépolis ha sido activada.';
+            
+            document.getElementById('register-form').reset();
+        }
+    </script>
 
 </body>
 </html>
