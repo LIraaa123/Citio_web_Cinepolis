@@ -8,27 +8,22 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
         body { background-color: #f4f6f9; color: #333; }
         
-        /* Encabezado y Navegación */
         header { background-color: #0b2545; color: white; padding: 15px 5%; }
         .header-container { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 26px; font-weight: bold; color: #ffcc00; text-decoration: none; }
         nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 14px; }
         nav a:hover, nav a.active { color: #ffcc00; }
 
-        /* Contenido Principal */
         .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
         h1 { margin-bottom: 20px; color: #0b2545; border-bottom: 3px solid #ffcc00; display: inline-block; padding-bottom: 5px; }
 
-        /* Cuadrícula de Películas */
         .movies-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 25px; margin-top: 20px; }
         .movie-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; padding-bottom: 15px; }
         
-        /* Imagen del Póster */
         .poster { width: 100%; height: 320px; object-fit: cover; display: block; background-color: #2c3e50; }
         
         .movie-title { font-size: 15px; margin: 12px 10px 5px 10px; height: 40px; display: flex; align-items: center; justify-content: center; color: #0b2545; font-weight: bold; }
         
-        /* Insignias de Clasificación */
         .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 10px; }
         .badge-b { background-color: #ffcc00; color: #000; }
         .badge-b15 { background-color: #ff9900; color: #fff; }
@@ -38,13 +33,11 @@
         .btn-sinopsis { display: inline-block; background-color: #0066cc; color: white; text-decoration: none; padding: 8px 15px; border-radius: 4px; font-size: 13px; font-weight: bold; }
         .btn-sinopsis:hover { background-color: #004999; }
 
-        /* Pie de página */
         footer { background-color: #0b2545; color: white; text-align: center; padding: 20px; margin-top: 50px; font-size: 14px; }
     </style>
 </head>
 <body>
 
-    <!-- Encabezado y Barra de Navegación -->
     <header>
         <div class="header-container">
             <a href="index.html" class="logo">Cinépolis</a>
@@ -56,78 +49,76 @@
         </div>
     </header>
 
-    <!-- Cuerpo Principal -->
     <div class="container">
         <h1>En Cartelera</h1>
         <div class="movies-grid">
 
             <div class="movie-card">
-                <img class="poster" src="imagenes/street_fighter.jpg" alt="Street Fighter">
+                <img class="poster" src="https://picsum.photos/seed/streetfighter/400/600" alt="Street Fighter">
                 <div class="movie-title">Street Fighter</div>
                 <span class="badge badge-b">Clasificación B</span><br>
-                <a href="sinopsis.html?pelicula=street-fighter" class="btn-sinopsis">Ver sinopsis</a>
+                <a href="sinopsis.html" class="btn-sinopsis">Ver sinopsis</a>
             </div>
 
             <div class="movie-card">
-                <img class="poster" src="imagenes/la_caida_de_la_ballena.jpg" alt="La Caída De La Ballena">
+                <img class="poster" src="https://picsum.photos/seed/whale/400/600" alt="La Caída De La Ballena">
                 <div class="movie-title">La Caída De La Ballena</div>
                 <span class="badge badge-b">Clasificación B</span><br>
-                <a href="sinopsis.html?pelicula=la-caida-de-la-ballena" class="btn-sinopsis">Ver sinopsis</a>
+                <a href="sinopsis.html" class="btn-sinopsis">Ver sinopsis</a>
             </div>
 
             <div class="movie-card">
-                <img class="poster" src="imagenes/el_laberinto_del_fauno.jpg" alt="El Laberinto Del Fauno">
+                <img class="poster" src="https://picsum.photos/seed/fauno/400/600" alt="El Laberinto Del Fauno">
                 <div class="movie-title">El Laberinto Del Fauno</div>
                 <span class="badge badge-tbc">Clasificación TBC</span><br>
-                <a href="sinopsis.html?pelicula=el-laberinto-del-fauno" class="btn-sinopsis">Ver sinopsis</a>
+                <a href="sinopsis.html" class="btn-sinopsis">Ver sinopsis</a>
             </div>
 
             <div class="movie-card">
-                <img class="poster" src="imagenes/el_corazon_de_la_bestia.jpg" alt="El Corazón De La Bestia">
+                <img class="poster" src="https://picsum.photos/seed/beast/400/600" alt="El Corazón De La Bestia">
                 <div class="movie-title">El Corazón De La Bestia</div>
                 <span class="badge badge-b">Clasificación B</span><br>
-                <a href="sinopsis.html?pelicula=el-corazon-de-la-bestia" class="btn-sinopsis">Ver sinopsis</a>
+                <a href="sinopsis.html" class="btn-sinopsis">Ver sinopsis</a>
             </div>
 
             <div class="movie-card">
-                <img class="poster" src="imagenes/verity.jpg" alt="Verity: La Sombra De Un Engaño">
+                <img class="poster" src="https://picsum.photos/seed/verity/400/600" alt="Verity: La Sombra De Un Engaño">
                 <div class="movie-title">Verity: La Sombra De Un Engaño</div>
                 <span class="badge badge-b15">Clasificación B15</span><br>
-                <a href="sinopsis.html?pelicula=verity" class="btn-sinopsis">Ver sinopsis</a>
+                <a href="sinopsis.html" class="btn-sinopsis">Ver sinopsis</a>
             </div>
 
             <div class="movie-card">
-                <img class="poster" src="imagenes/madre_siniestra.jpg" alt="Madre Siniestra">
+                <img class="poster" src="https://picsum.photos/seed/madre/400/600" alt="Madre Siniestra">
                 <div class="movie-title">Madre Siniestra</div>
                 <span class="badge badge-b">Clasificación B</span><br>
-                <a href="sinopsis.html?pelicula=madre-siniestra" class="btn-sinopsis">Ver sinopsis</a>
+                <a href="sinopsis.html" class="btn-sinopsis">Ver sinopsis</a>
             </div>
 
             <div class="movie-card">
-                <img class="poster" src="imagenes/resident_evil.jpg" alt="Resident Evil: Noche Cero">
+                <img class="poster" src="https://picsum.photos/seed/residentevil/400/600" alt="Resident Evil: Noche Cero">
                 <div class="movie-title">Resident Evil: Noche Cero</div>
                 <span class="badge badge-b15">Clasificación B15</span><br>
-                <a href="sinopsis.html?pelicula=resident-evil" class="btn-sinopsis">Ver sinopsis</a>
+                <a href="sinopsis.html" class="btn-sinopsis">Ver sinopsis</a>
             </div>
 
             <div class="movie-card">
-                <img class="poster" src="imagenes/un_mal_partido.jpg" alt="Un Mal Partido">
+                <img class="poster" src="https://picsum.photos/seed/unmalpartido/400/600" alt="Un Mal Partido">
                 <div class="movie-title">Un Mal Partido</div>
                 <span class="badge badge-tbc">Clasificación TBC</span><br>
-                <a href="sinopsis.html?pelicula=un-mal-partido" class="btn-sinopsis">Ver sinopsis</a>
+                <a href="sinopsis.html" class="btn-sinopsis">Ver sinopsis</a>
             </div>
 
             <div class="movie-card">
-                <img class="poster" src="imagenes/clayface.jpg" alt="Clayface">
+                <img class="poster" src="https://picsum.photos/seed/clayface/400/600" alt="Clayface">
                 <div class="movie-title">Clayface</div>
                 <span class="badge badge-c">Clasificación C</span><br>
-                <a href="sinopsis.html?pelicula=clayface" class="btn-sinopsis">Ver sinopsis</a>
+                <a href="sinopsis.html" class="btn-sinopsis">Ver sinopsis</a>
             </div>
 
         </div>
     </div>
 
-    <!-- Pie de página -->
     <footer>
         <p>&copy; 2026 Cinépolis - Todos los derechos reservados.</p>
     </footer>
