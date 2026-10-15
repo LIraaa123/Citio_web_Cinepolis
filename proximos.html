@@ -18,7 +18,9 @@
 
         .movies-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 25px; margin-top: 20px; }
         .movie-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; padding-bottom: 15px; }
-        .poster { width: 100%; height: 310px; background-color: #2c3e50; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 16px; padding: 10px; text-align: center; }
+        
+        .poster { width: 100%; height: 320px; object-fit: cover; display: block; background-color: #2c3e50; }
+        
         .movie-title { font-size: 15px; margin: 12px 10px 5px 10px; height: 45px; display: flex; align-items: center; justify-content: center; color: #0b2545; font-weight: bold; }
         .release-date { color: #cc0000; font-weight: bold; font-size: 14px; margin-bottom: 8px; }
 
@@ -46,33 +48,33 @@
         <div class="movies-grid">
 
             <div class="movie-card">
-                <div class="poster" style="background-color: #1b4f72;">Avengers: Doomsday</div>
+                <img class="poster" src="imagenes/avengers_doomsday.jpg" alt="Avengers: Doomsday">
                 <div class="movie-title">Avengers: Doomsday</div>
-                <div class="release-date">Estreno: 17 de Diciembre</div>
+                <div class="release-date">Estreno: 17th Dic</div>
                 <span class="badge">Clasificación TBC</span><br>
                 <a href="sinopsis.html?pelicula=avengers-doomsday" class="btn-sinopsis">Ver sinopsis</a>
             </div>
 
             <div class="movie-card">
-                <div class="poster" style="background-color: #78281f;">BTS WORLD TOUR 'ARIRANG' IN BUENOS AIRES: EN VIVO</div>
-                <div class="movie-title">BTS World Tour: Buenos Aires</div>
-                <div class="release-date">Estreno: 24 de Octubre</div>
+                <img class="poster" src="imagenes/bts_buenos_aires.jpg" alt="BTS World Tour Buenos Aires">
+                <div class="movie-title">BTS WORLD TOUR 'ARIRANG' IN BUENOS AIRES: EN VIVO</div>
+                <div class="release-date">Estreno: 24th Oct</div>
                 <span class="badge">Clasificación TBC</span><br>
                 <a href="sinopsis.html?pelicula=bts-buenos-aires" class="btn-sinopsis">Ver sinopsis</a>
             </div>
 
             <div class="movie-card">
-                <div class="poster" style="background-color: #512e5f;">BTS WORLD TOUR 'ARIRANG' IN SÃO PAULO: EN VIVO</div>
-                <div class="movie-title">BTS World Tour: São Paulo</div>
-                <div class="release-date">Estreno: 30 de Octubre</div>
+                <img class="poster" src="imagenes/bts_sao_paulo.jpg" alt="BTS World Tour Sao Paulo">
+                <div class="movie-title">BTS WORLD TOUR 'ARIRANG' IN SÃO PAULO: EN VIVO</div>
+                <div class="release-date">Estreno: 30th Oct</div>
                 <span class="badge">Clasificación TBC</span><br>
                 <a href="sinopsis.html?pelicula=bts-sao-paulo" class="btn-sinopsis">Ver sinopsis</a>
             </div>
 
             <div class="movie-card">
-                <div class="poster" style="background-color: #117864;">Stray Kids World Tour &lt;RUN IT&gt; LIVE VIEWING</div>
-                <div class="movie-title">Stray Kids World Tour</div>
-                <div class="release-date">Estreno: 7 de Noviembre</div>
+                <img class="poster" src="imagenes/stray_kids.jpg" alt="Stray Kids World Tour">
+                <div class="movie-title">Stray Kids World Tour &lt;RUN IT&gt; LIVE VIEWING</div>
+                <div class="release-date">Estreno: 7th Nov</div>
                 <span class="badge">Clasificación TBC</span><br>
                 <a href="sinopsis.html?pelicula=stray-kids" class="btn-sinopsis">Ver sinopsis</a>
             </div>
