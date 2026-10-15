@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinépolis - Club Cinépolis</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background-color: #f4f6f9; color: #333; }
+        header { background-color: #0b2545; color: white; padding: 15px 5%; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 26px; font-weight: bold; color: #ffcc00; text-decoration: none; }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 14px; }
+        nav a:hover, nav a.active { color: #ffcc00; }
+
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .forms-wrapper { display: flex; gap: 30px; flex-wrap: wrap; }
+        .form-box { flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .form-box h2 { color: #0b2545; margin-bottom: 20px; border-bottom: 2px solid #ffcc00; padding-bottom: 8px; font-size: 20px; }
+        
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 14px; font-weight: bold; margin-bottom: 5px; color: #555; }
+        .form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
+
+        .btn-submit { width: 100%; background-color: #0066cc; color: white; border: none; padding: 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 15px; }
+        .btn-submit:hover { background-color: #004999; }
+
+        footer { background-color: #0b2545; color: white; text-align: center; padding: 20px; margin-top: 50px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Cinépolis</a>
+            <nav>
+                <a href="index.html">Cartelera</a>
+                <a href="proximos.html">Próximos Estrenos</a>
+                <a href="club.html" class="active">Club Cinépolis</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="forms-wrapper">
+            
+            <!-- Iniciar Sesión con Tarjeta -->
+            <div class="form-box">
+                <h2>Ingresa con tu Tarjeta</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="card-number">Número de Tarjeta (16 dígitos)</label>
+                        <input type="text" id="card-number" placeholder="Ej. 1010 2020 3030 4040" required maxlength="16">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña o PIN</label>
+                        <input type="password" id="password" placeholder="Tu contraseña" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Ingresar a Club Cinépolis</button>
+                </form>
+            </div>
+
+            <!-- Registro -->
+            <div class="form-box">
+                <h2>¿No tienes tarjeta? Regístrate</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="fullname">Nombre Completo</label>
+                        <input type="text" id="fullname" placeholder="Ej. Juan Pérez" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" placeholder="correo@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">Crea una Contraseña</label>
+                        <input type="password" id="new-password" placeholder="Mínimo 6 caracteres" required>
+                    </div>
+                    <button type="submit" class="btn-submit" style="background-color: #27ae60;">Crear Cuenta Club</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Cinépolis - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
