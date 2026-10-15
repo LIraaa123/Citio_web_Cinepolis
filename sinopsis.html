@@ -19,7 +19,12 @@
         .info { flex: 1; min-width: 280px; }
         .info h1 { color: #0b2545; margin-bottom: 10px; }
         
-        .badge { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: bold; margin-bottom: 15px; background-color: #ffcc00; color: #000; }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: bold; margin-bottom: 15px; }
+        .badge-b { background-color: #ffcc00; color: #000; }
+        .badge-b15 { background-color: #ff9900; color: #fff; }
+        .badge-c { background-color: #cc0000; color: #fff; }
+        .badge-tbc { background-color: #888; color: #fff; }
+
         .synopsis { font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 25px; }
 
         .schedules h3 { color: #0b2545; margin-bottom: 10px; }
@@ -47,21 +52,23 @@
 
     <div class="container">
         <div class="movie-details">
-            <img class="poster-detail" src="imagenes/street_fighter.jpg" alt="Página de Sinopsis">
+            <img id="movie-img" class="poster-detail" src="imagenes/street_fighter.jpg" alt="Póster de la película">
             <div class="info">
-                <h1>Detalles de la Película</h1>
-                <span class="badge">Clasificación B</span>
+                <h1 id="movie-title">Cargando...</h1>
+                <span id="movie-badge" class="badge badge-b">Clasificación B</span>
                 
-                <p class="synopsis">
-                    Disfruta de la experiencia cinematográfica en Cinépolis. Selecciona tu horario para comprar tus boletos o consultar disponibilidad en tu sala más cercana.
+                <p id="movie-synopsis" class="synopsis">
+                    Cargando información de la película...
                 </p>
 
                 <div class="schedules">
                     <h3>Horarios Disponibles</h3>
-                    <button class="time-btn">14:30 hrs</button>
-                    <button class="time-btn">17:00 hrs</button>
-                    <button class="time-btn">19:45 hrs</button>
-                    <button class="time-btn">22:15 hrs</button>
+                    <div id="schedules-list">
+                        <button class="time-btn">14:30 hrs</button>
+                        <button class="time-btn">17:00 hrs</button>
+                        <button class="time-btn">19:45 hrs</button>
+                        <button class="time-btn">22:15 hrs</button>
+                    </div>
                 </div>
 
                 <a href="index.html" class="btn-back">&larr; Volver a la cartelera</a>
@@ -73,5 +80,125 @@
         <p>&copy; 2026 Cinépolis - Todos los derechos reservados.</p>
     </footer>
 
+    <script>
+        // Diccionario de información para cada película
+        const peliculas = {
+            'street-fighter': {
+                titulo: 'Street Fighter',
+                imagen: 'imagenes/street_fighter.jpg',
+                clasificacion: 'Clasificación B',
+                claseBadge: 'badge-b',
+                sinopsis: 'Los luchadores más icónicos del mundo se enfrentan en un torneo legendario donde solo el más fuerte prevalecerá para proteger el destino del planeta.'
+            },
+            'la-caida-de-la-ballena': {
+                titulo: 'La Caída De La Ballena',
+                imagen: 'imagenes/la_caida_de_la_ballena.jpg',
+                clasificacion: 'Clasificación B',
+                claseBadge: 'badge-b',
+                sinopsis: 'Un cautivador e íntimo drama oceánico que explora las profundidades marinas y los misterios que habitan en los abismos inexplorados.'
+            },
+            'el-laberinto-del-fauno': {
+                titulo: 'El Laberinto Del Fauno',
+                imagen: 'imagenes/el_laberinto_del_fauno.jpg',
+                clasificacion: 'Clasificación TBC',
+                claseBadge: 'badge-tbc',
+                sinopsis: 'Reestreno especial 20 Aniversario. En la España de 1944, la joven Ofelia descubre un misterioso laberinto guiado por un fauno que le encomienda tres pruebas ancestrales.'
+            },
+            'el-corazon-de-la-bestia': {
+                titulo: 'El Corazón De La Bestia',
+                imagen: 'imagenes/el_corazon_de_la_bestia.jpg',
+                clasificacion: 'Clasificación B',
+                claseBadge: 'badge-b',
+                sinopsis: 'Una conmovedora historia de supervivencia y valentía donde la lealtad entre un perro de rescate y su guía desafía las condiciones más adversas.'
+            },
+            'verity': {
+                titulo: 'Verity: La Sombra De Un Engaño',
+                imagen: 'imagenes/verity.jpg',
+                clasificacion: 'Clasificación B15',
+                claseBadge: 'badge-b15',
+                sinopsis: 'Basada en el éxito literario, una escritora es contratada para completar la saga de una autora herida, descubriendo perturbadores secretos en sus manuscritos inéditos.'
+            },
+            'madre-siniestra': {
+                titulo: 'Madre Siniestra',
+                imagen: 'imagenes/madre_siniestra.jpg',
+                clasificacion: 'Clasificación B',
+                claseBadge: 'badge-b',
+                sinopsis: 'Un intenso thriller psicológico donde las apariencias engañan y los lazos familiares se convierten en la trampa más oscura y aterradora.'
+            },
+            'resident-evil': {
+                titulo: 'Resident Evil: Noche Cero',
+                imagen: 'imagenes/resident_evil.jpg',
+                clasificacion: 'Clasificación B15',
+                claseBadge: 'badge-b15',
+                sinopsis: 'El origen de la pesadilla. Acompaña al equipo STARS en sus primeras investigaciones en las afueras de Raccoon City antes del brote biológico masivo.'
+            },
+            'un-mal-partido': {
+                titulo: 'Un Mal Partido',
+                imagen: 'imagenes/un_mal_partido.jpg',
+                clasificacion: 'Clasificación TBC',
+                claseBadge: 'badge-tbc',
+                sinopsis: 'Una hilarante comedia sobre las enredadas situaciones románticas y de amistad que ocurren durante un fin de semana lleno de sorpresas inesperadas.'
+            },
+            'clayface': {
+                titulo: 'Clayface',
+                imagen: 'imagenes/clayface.jpg',
+                clasificacion: 'Clasificación C',
+                claseBadge: 'badge-c',
+                sinopsis: 'Una oscura visión sobre la transformación de un actor frustrado en uno de los villanos más moldeables y aterradores del universo de cómics.'
+            },
+            'avengers-doomsday': {
+                titulo: 'Avengers: Doomsday',
+                imagen: 'imagenes/avengers_doomsday.jpg',
+                clasificacion: 'Clasificación TBC',
+                claseBadge: 'badge-tbc',
+                sinopsis: 'Los Héroes Más Poderosos de la Tierra enfrentan su amenaza más grande y destructiva. El destino del universo pende de un hilo en esta épica batalla.'
+            },
+            'bts-buenos-aires': {
+                titulo: "BTS WORLD TOUR 'ARIRANG' IN BUENOS AIRES: EN VIVO",
+                imagen: 'imagenes/bts_buenos_aires.jpg',
+                clasificacion: 'Clasificación TBC',
+                claseBadge: 'badge-tbc',
+                sinopsis: 'Transmisión en vivo y en exclusiva desde Buenos Aires. Vive la pasión y energía del concierto monumental de BTS en la pantalla grande.'
+            },
+            'bts-sao-paulo': {
+                titulo: "BTS WORLD TOUR 'ARIRANG' IN SÃO PAULO: EN VIVO",
+                imagen: 'imagenes/bts_sao_paulo.jpg',
+                clasificacion: 'Clasificación TBC',
+                claseBadge: 'badge-tbc',
+                sinopsis: 'Transmisión directa desde São Paulo. Una experiencia inmersiva para el ARMY con sonido envolvente y calidad cinematográfica de alta definición.'
+            },
+            'stray-kids': {
+                titulo: 'Stray Kids World Tour <RUN IT> LIVE VIEWING',
+                imagen: 'imagenes/stray_kids.jpg',
+                clasificacion: 'Clasificación TBC',
+                claseBadge: 'badge-tbc',
+                sinopsis: 'Transmisión global en vivo del impactante espectáculo de Stray Kids como parte de su gira mundial <RUN IT>.'
+            }
+        };
+
+        // Detectar cuál película se presionó según el enlace de la URL
+        const params = new URLSearchParams(window.location.search);
+        const peliKey = params.get('pelicula');
+
+        if (peliKey && peliculas[peliKey]) {
+            const data = peliculas[peliKey];
+            document.title = 'Cinépolis - ' + data.titulo;
+            document.getElementById('movie-title').textContent = data.titulo;
+            document.getElementById('movie-img').src = data.imagen;
+            document.getElementById('movie-img').alt = data.titulo;
+            document.getElementById('movie-synopsis').textContent = data.sinopsis;
+            
+            const badgeElem = document.getElementById('movie-badge');
+            badgeElem.textContent = data.clasificacion;
+            badgeElem.className = 'badge ' + data.claseBadge;
+        } else {
+            // Mostrar la primera película por defecto si no se especifica ninguna
+            const defaultPeli = peliculas['street-fighter'];
+            document.title = 'Cinépolis - ' + defaultPeli.titulo;
+            document.getElementById('movie-title').textContent = defaultPeli.titulo;
+            document.getElementById('movie-img').src = defaultPeli.imagen;
+            document.getElementById('movie-synopsis').textContent = defaultPeli.sinopsis;
+        }
+    </script>
 </body>
 </html>
