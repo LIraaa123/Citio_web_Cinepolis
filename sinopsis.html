@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinépolis - Detalles de la Película</title>
+    <title>Cinépolis - Sinopsis</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
         body { background-color: #f4f6f9; color: #333; }
@@ -15,7 +15,7 @@
 
         .container { max-width: 900px; margin: 40px auto; padding: 25px; background: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         .movie-details { display: flex; gap: 30px; flex-wrap: wrap; }
-        .poster-detail { width: 250px; height: 350px; background-color: #0b2545; color: white; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: bold; border-radius: 6px; text-align: center; padding: 15px; }
+        .poster-detail { width: 250px; height: 350px; object-fit: cover; border-radius: 6px; background-color: #0b2545; }
         .info { flex: 1; min-width: 280px; }
         .info h1 { color: #0b2545; margin-bottom: 10px; }
         
@@ -47,17 +47,17 @@
 
     <div class="container">
         <div class="movie-details">
-            <div class="poster-detail">Pelicula Seleccionada</div>
+            <img class="poster-detail" src="imagenes/street_fighter.jpg" alt="Página de Sinopsis">
             <div class="info">
                 <h1>Detalles de la Película</h1>
                 <span class="badge">Clasificación B</span>
                 
                 <p class="synopsis">
-                    Disfruta de la mejor experiencia de cine. Selecciona tu horario para comprar tus boletos o consultar disponibilidad en tu sala Cinépolis más cercana.
+                    Disfruta de la experiencia cinematográfica en Cinépolis. Selecciona tu horario para comprar tus boletos o consultar disponibilidad en tu sala más cercana.
                 </p>
 
                 <div class="schedules">
-                    <h3>Horarios Disponibles (Hoy)</h3>
+                    <h3>Horarios Disponibles</h3>
                     <button class="time-btn">14:30 hrs</button>
                     <button class="time-btn">17:00 hrs</button>
                     <button class="time-btn">19:45 hrs</button>
